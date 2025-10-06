@@ -154,26 +154,6 @@ madhav-ecommerce-dashboard/
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Power BI Desktop (latest version recommended)
-- Basic understanding of data analytics and BI concepts
-
-### Installation
-1. Clone this repository
-```bash
-git clone https://github.com/yourusername/madhav-ecommerce-dashboard.git
-```
-
-2. Open the `.pbix` file in Power BI Desktop
-
-3. Refresh data sources if needed
-
-4. Explore the dashboard and interact with filters
-
----
-
 ## 📊 Dashboard Sections
 
 1. **KPI Overview** - Key metrics at a glance
@@ -208,27 +188,6 @@ This project demonstrates proficiency in:
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
----
-
-## 📧 Contact
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
 ## ⭐ Acknowledgments
 
 - Data source: Madhav Ecommerce sample dataset
@@ -236,6 +195,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Tools: Microsoft Power BI community resources
 
 ---
+## Glance of Dashboard
+
+<img width="505" height="300" alt="image" src="https://github.com/user-attachments/assets/c0305725-3130-40ec-973b-84788e6b9e29" />
 
 <p align="center">Made with ❤️ and Power BI</p>
 <p align="center">⭐ Star this repo if you find it helpful!</p>
