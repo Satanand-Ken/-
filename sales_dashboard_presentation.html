@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhav Ecommerce Sales Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d1b4e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 20px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .slide-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .slide-header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .slide-header h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #a78bfa;
+        }
+        
+        .slide-header p {
+            font-size: 1.3em;
+            color: #c4b5fd;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .metric-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(167, 139, 250, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-10px);
+            border-color: #a78bfa;
+            box-shadow: 0 10px 40px rgba(167, 139, 250, 0.3);
+        }
+        
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: #60a5fa;
+            margin: 10px 0;
+        }
+        
+        .metric-label {
+            font-size: 1.2em;
+            color: #c4b5fd;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #60a5fa;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-left-width: 8px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: #60a5fa;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-card li {
+            padding: 8px 0;
+            color: #e0e7ff;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .tech-badge {
+            background: rgba(167, 139, 250, 0.2);
+            border: 2px solid #a78bfa;
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #e0e7ff;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            background: rgba(167, 139, 250, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(139, 92, 246, 0.15);
+            border-radius: 20px;
+            border: 2px solid rgba(167, 139, 250, 0.3);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .insights-list {
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .insight-item:hover {
+            background: rgba(139, 92, 246, 0.2);
+            transform: translateX(10px);
+        }
+        
+        .insight-icon {
+            font-size: 2em;
+            margin-right: 20px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .insight-content h4 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .insight-content p {
+            color: #e0e7ff;
+            line-height: 1.6;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .nav-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(167, 139, 250, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: #a78bfa;
+            transform: scale(1.3);
+        }
+        
+        .nav-dot:hover {
+            background: #c4b5fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <div class="slide-header">
+                <h1>📊 Madhav Ecommerce</h1>
+                <h1>Sales Dashboard</h1>
+                <p style="margin-top: 30px;">A comprehensive Power BI analytics solution transforming raw sales data into actionable business intelligence</p>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-badge">Power BI</span>
+                <span class="tech-badge">Data Analytics</span>
+                <span class="tech-badge">Business Intelligence</span>
+                <span class="tech-badge">DAX</span>
+            </div>
+        </div>
+
+        <!-- Slide 2: Overview -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>📈 Project Overview</h2>
+                <p>An interactive sales dashboard providing real-time insights into ecommerce performance across multiple dimensions</p>
+            </div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">₹2.17M</div>
+                    <div class="metric-label">Total Sales</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">₹37K</div>
+                    <div class="metric-label">Net Profit</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">121K</div>
+                    <div class="metric-label">AOV</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">438K</div>
+                    <div class="metric-label">Total Amount</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Key Features -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>✨ Key Features</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>📊 Multi-Dimensional Analysis</h3>
+                    <ul>
+                        <li>Product category performance tracking</li>
+                        <li>Geographic sales distribution</li>
+                        <li>Customer segmentation analysis</li>
+                        <li>Temporal trend visualization</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Financial Insights</h3>
+                    <ul>
+                        <li>Profit vs Loss order tracking</li>
+                        <li>Monthly profitability trends</li>
+                        <li>Sub-category margin analysis</li>
+                        <li>Payment mode preferences</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Interactive Controls</h3>
+                    <ul>
+                        <li>Quarterly filters for time-based analysis</li>
+                        <li>State-wise performance drill-down</li>
+                        <li>Dynamic visualizations</li>
+                        <li>Cross-filtering capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Key Insights -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>💡 Business Insights Delivered</h2>
+            </div>
+            <div class="insights-list">
+                <div class="insight-item">
+                    <div class="insight-icon">📦</div>
+                    <div class="insight-content">
+                        <h4>Product Performance</h4>
+                        <p>Clothing dominates at 62.62% of sales, followed by Electronics (20.55%) and Furniture (16.83%). Printers lead profitability in sub-categories.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">💳</div>
+                    <div class="insight-content">
+                        <h4>Payment Preferences</h4>
+                        <p>COD leads at 44%, followed by UPI at 21%. Multi-channel payment support is crucial for customer convenience.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">📍</div>
+                    <div class="insight-content">
+                        <h4>Geographic Distribution</h4>
+                        <p>Indore (71 orders), Mumbai (67 orders), and Chandigarh (30 orders) are top-performing cities, indicating strong urban market presence.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">📉</div>
+                    <div class="insight-content">
+                        <h4>Order Quality</h4>
+                        <p>64.73% orders are profitable while 35.27% are loss-making. Focus needed on improving margin on loss-generating orders.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">📅</div>
+                    <div class="insight-content">
+                        <h4>Seasonal Trends</h4>
+                        <p>December shows highest profitability spike. January-March and December show strong performance, indicating seasonal opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Technical Implementation -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>🔧 Technical Implementation</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Data Processing</h3>
+                    <ul>
+                        <li>ETL pipeline for data transformation</li>
+                        <li>Data modeling and relationships</li>
+                        <li>Calculated columns and measures</li>
+                        <li>Data quality validation</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>DAX Formulas</h3>
+                    <ul>
+                        <li>Profit calculations</li>
+                        <li>AOV computations</li>
+                        <li>Time intelligence functions</li>
+                        <li>Percentage calculations</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>Visualization Design</h3>
+                    <ul>
+                        <li>Custom color scheme (purple/blue palette)</li>
+                        <li>Donut charts for composition analysis</li>
+                        <li>Bar charts for comparisons</li>
+                        <li>Stacked bars for trends</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Use Cases -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>🎯 Business Use Cases</h2>
+            </div>
+            <div class="insights-list">
+                <div class="insight-item">
+                    <div class="insight-icon">👔</div>
+                    <div class="insight-content">
+                        <h4>For Sales Managers</h4>
+                        <p>Track quarterly performance, identify top customers, and optimize sales strategies based on geographic and product insights.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">📦</div>
+                    <div class="insight-content">
+                        <h4>For Inventory Teams</h4>
+                        <p>Understand product category demand, manage stock levels efficiently, and forecast inventory needs by location.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">💼</div>
+                    <div class="insight-content">
+                        <h4>For Finance Teams</h4>
+                        <p>Monitor profitability trends, analyze loss-making orders, and optimize pricing strategies across categories.</p>
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon">🎯</div>
+                    <div class="insight-content">
+                        <h4>For Marketing Teams</h4>
+                        <p>Identify high-value customer segments, target geographic regions, and plan seasonal campaigns based on data trends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Call to Action -->
+        <div class="slide">
+            <div class="slide-header">
+                <h2>🚀 Explore the Project</h2>
+            </div>
+            <div class="cta-section">
+                <h3 style="color: #c4b5fd; margin-bottom: 30px; font-size: 1.5em;">Transform Your Sales Data into Insights</h3>
+                <p style="color: #e0e7ff; margin-bottom: 40px; font-size: 1.2em;">
+                    This dashboard demonstrates proficiency in data analytics, visualization design, and business intelligence.
+                </p>
+                <div>
+                    <a href="#" class="cta-button">View on GitHub</a>
+                    <a href="#" class="cta-button" style="background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);">Live Demo</a>
+                </div>
+                <div style="margin-top: 50px;">
+                    <h4 style="color: #a78bfa; margin-bottom: 20px;">Project Highlights</h4>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Interactive Dashboards</span>
+                        <span class="tech-badge">Real-time Analytics</span>
+                        <span class="tech-badge">Data-Driven Decisions</span>
+                        <span class="tech-badge">Business Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="nav-dot active" onclick="scrollToSlide(0)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(1)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(2)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(3)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(4)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(5)"></div>
+        <div class="nav-dot" onclick="scrollToSlide(6)"></div>
+    </div>
+
+    <script>
+        function scrollToSlide(index) {
+            const slides = document.querySelectorAll('.slide');
+            slides[index].scrollIntoView({ behavior: 'smooth' });
+            
+            document.querySelectorAll('.nav-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        window.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaY) > 50) {
+                if (e.deltaY > 0 && currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    scrollToSlide(currentSlide);
+                } else if (e.deltaY < 0 && currentSlide > 0) {
+                    currentSlide--;
+                    scrollToSlide(currentSlide);
+                }
+            }
+        }, { passive: true });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' && currentSlide < slides.length - 1) {
+                currentSlide++;
+                scrollToSlide(currentSlide);
+            } else if (e.key === 'ArrowUp' && currentSlide > 0) {
+                currentSlide--;
+                scrollToSlide(currentSlide);
+            }
+        });
+    </script>
+</body>
+</html>
