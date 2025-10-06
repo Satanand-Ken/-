@@ -1,113 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ken B</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Satanand | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #2f2f2f;
+      color: #fff;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #444;
+    }
+    h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    ul, ol {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    .sub {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      background: #2f2f2f;
+      color: #ccc;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .project-details {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #555;
+      background: #fafafa;
+      border-left: 4px solid #aaa;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .project-details h4 {
+      margin-top: 0;
+      color: #333;
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-
-  <!-- Navbar -->
-  <header class="fixed w-full top-0 left-0 z-50 bg-black/70 backdrop-blur-md border-b border-green-500/20">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <h1 class="text-2xl font-extrabold tracking-widest text-green-400">Ken B</h1>
-      <nav class="space-x-6 hidden md:block">
-        <a href="#music" class="hover:text-green-400 transition">Music</a>
-        <a href="#literature" class="hover:text-green-400 transition">Literature</a>
-        <a href="#projects" class="hover:text-green-400 transition">Projects</a>
-        <a href="#connect" class="hover:text-green-400 transition">Connect</a>
-        <a href="TypeB.html" class="hover:text-green-400 transition">Typing Test</a>
-      </nav>
-    </div>
+<body>
+  <!-- Header with logo on left and options on right -->
+  <header>
+    <div class="logo">Satanand</div>
+    <nav>
+      <a href="#articles">Articles</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScoX77PBoXzM3WVxxpaZYv_GjcSss8uRPi15SO0p0K8XEVQBQ/viewform?usp=header" target="_blank">Form</a>
+      <a href="pomodoro.html" target="_blank">Pomodoro Timer</a>
+    </nav>
   </header>
+  
+  <main>
+    <section id="personal">
+      <h2>Personal Detail</h2>
+      <h3>Satanand</h3>
+      <p><strong>Phone No.: </strong> +91-8744833781 <br> <strong>Email: </strong> <a href="mailto:satanand74@gmail.com" style="color:#333;">satanand74@gmail.com</a><br> <strong>Address: </strong>B-203, Prem Nagar 3, Kirari Suleman Nagar, Delhi - 110086</p>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center relative">
-    <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative text-center px-6">
-      <h2 class="text-5xl md:text-7xl font-extrabold text-green-400 drop-shadow-lg">Don't be judgemental <br> This webpage is still <br> in making process. <br> Well this website is <br> built by Satanand.</h2>
-      <p class="mt-4 text-gray-300 text-lg md:text-xl">Rapper • Writer • Storyteller</p>
-      <div class="mt-8 space-x-4">
-        <a href="#music" class="px-6 py-3 bg-green-400 text-black font-bold rounded-full hover:shadow-[0_0_15px_#22c55e] transition">🎧 Listen Now</a>
-        <a href="#literature" class="px-6 py-3 border border-green-400 rounded-full hover:bg-green-400 hover:text-black transition">📖 Read My Words</a>
-      </div>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>Proactive MIS Executive skilled in Google Sheets and Excel automation, flow monitoring, and dashboard creation. Experienced in SQL, ETL, and data visualization with Tableau and Power BI. Completed a comprehensive Data Science course and recognized as a two-time Mental Math Zonal Level topper.</p>
+    </section>
 
-  <!-- Music Section -->
-  <section id="music" class="py-20 max-w-6xl mx-auto px-6">
-    <h3 class="text-4xl font-bold text-green-400 mb-8 text-center">🎶 Music</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Track 1</h4>
-        <iframe class="w-full rounded-lg" height="180" src="https://www.youtube.com/embed/track/glZMrGHGvt0?si=oN9heyEuzoWo2NNy" allow="encrypted-media"></iframe>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Track 2</h4>
-        <iframe class="w-full rounded-lg" height="180" src="https://www.youtube.com/embed/cOo2xGkGk4c?si=_WG4IrBN-EeoqB52" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ol>
+        <li><strong>Indira Gandhi National Open University</strong>, New Delhi, India <br>
+          Bachelor of Computer Application (2023 – Present)</li>
+        <li><strong>CBSE</strong>, New Delhi, India <br>
+          12th (Science, Non-Medical) (2020 – 2021)</li>
+        <li><strong>CBSE</strong>, New Delhi, India <br>
+          10th (2018 – 2019)</li>
+      </ol>
+    </section>
 
-  <!-- Literature Section -->
-  <section id="literature" class="py-20 bg-zinc-950 px-6">
-    <h3 class="text-4xl font-bold text-green-400 mb-8 text-center">✍ Literature</h3>
-    <div class="max-w-4xl mx-auto space-y-6 text-lg text-gray-300 italic">
-      <p>“Ink bleeds deeper than blood, carving truths that beats can’t hide.”</p>
-      <p>“From Bihar streets to Delhi nights, my words carry both fire and light.”</p>
-      <p>“Rap isn’t noise — it’s resistance written in rhythm.”</p>
-    </div>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p><strong>▪️Technical:</strong> SQL, Statistics, ETL, Data Visualization, Automation, NLP, 70 WPM Typing Speed</p>
+      <p><strong>▪️Tools:</strong> Tableau, Power BI, Excel, Google Sheets, MySql</p>
+      <p><strong>▪️Certifications:</strong></p>
+      <ul>
+        <li>Completed Data Science Course from CodeWithHarry.com <a href="https://github.com/Satanand-Ken/Satanand-Resume/blob/main/Data-Science%20Certificate_.jpg" target="_blank">View Certificate</a></li>
+      </ul>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
-    <h3 class="text-4xl font-bold text-green-400 mb-8 text-center">🚀 Projects</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Project 1</h4>
-        <p class="text-gray-400">Music video collaboration dropping soon.</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Project 2</h4>
-        <p class="text-gray-400">Literary collection of poems & rap verses.</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Project 3</h4>
-        <p class="text-gray-400">Live performances and upcoming events.</p>
-      </div>
-      <div class="bg-zinc-900 p-6 rounded-2xl hover:shadow-[0_0_20px_#22c55e] transition">
-        <h4 class="text-xl font-semibold mb-2">Project 4</h4>
-        <p class="text-gray-400">Live performances and upcoming events.</p>
-      </div>
-    </div>
-  </section>
+    <section id="experience">
+      <h2>Experience</h2>
 
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-zinc-950 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h3 class="text-4xl font-bold text-green-400 mb-6">👤 Who’s Ken B?</h3>
-      <p class="text-gray-300 text-lg leading-relaxed">
-        Born in Bihar, raised in Delhi — Ken B blends the rawness of street rap with the elegance of literature. 
-        His art isn’t just music, it’s rebellion, poetry, and storytelling stitched into rhythm.
-      </p>
-    </div>
-  </section>
+      <h3>STB Technologies Pvt Ltd. | Business Operations / Customer Support Executive</h3>
+      <p class="sub">New Delhi, India | July 2021 – April 2025</p>
+      <ul>
+        <li>Resolved customer complaints by coordinating with field engineers, ensuring timely service delivery.</li>
+        <li>Prepared delivery challans for spare parts dispatch to engineers to support complaint resolution.</li>
+        <li>Streamlined spare parts tracking by developing a Pivot Table–based solution that reduced report preparation time from 4–5 hours to just 5–6 minutes.</li>
+        <li>Improved operational efficiency and accuracy by automating repetitive manual reporting tasks.</li>
+      </ul>
+    </section>
 
-  <!-- Footer -->
-  <footer id="connect" class="bg-black border-t border-green-500/20 py-6">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-      <p class="text-gray-400">© 2025 Ken B. All Rights Reserved.</p>
-      <div class="flex space-x-6 mt-4 md:mt-0">
-        <a href="#" class="hover:text-green-400">Spotify</a>
-        <a href="#" class="hover:text-green-400">YouTube</a>
-        <a href="#" class="hover:text-green-400">Instagram</a>
-      </div>
-    </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Inventory Management System:</strong> Implemented VBA-driven automation in Excel with dynamic dashboards, improving reporting accuracy.</li>
+        <hr>
+        <li><strong>Flow Monitoring Sheet:</strong> Built a Google Sheets-based system automating dispatch tracking, reducing manual work by 40%, and adding validation checks with interactive dashboards.</li>
+        <hr>
+        <li><strong>Sales Dashboard for E-Commerce Business:</strong> Built an interactive Power BI dashboard to track and analyze online sales performance and enable data-driven decisions. </li>
+        <div class="project-details">
+          <h4>Technologies Used</h4>
+          <p>Power BI</p>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://github.com/Satanand-Ken/Satanand-Resume/blob/main/E-Commerce%20Sales%20Data.pbix" target="_blank">Download Power BI File (.pbix)</a></li>
+          </ul>
+          <h4>How It Works</h4>
+          <ul>
+            <li>Developed interactive worksheets with parameters, filters, and slicers for user-driven drilldowns.</li>
+            <li>Created data connections, joined tables, and implemented calculated measures to shape the model.</li>
+            <li>Designed a variety of custom visualizations: bar, clustered bar, pie, donut, scatter, line, area, and map charts.</li>
+            <li>Implemented slicers and custom parameters to allow flexible exploration of KPIs and trends.</li>
+          </ul>
+        </div>
+        <hr>
+        <li><strong>Customer Complaints Booking System:</strong> Designed an external webpage integrated with Google Sheets as a database. Implemented a Master Sheet dashboard featuring time delay KPIs, engineer efficiency scores, and real-time insights. <a href="https://github.com/Satanand-Ken/GsheetCRM" target="_blank">View Project</a>
+          <div class="project-details">
+            <h4>Technologies Used</h4>
+            <p>HTML5, CSS3 (Grid Layout), Vanilla JavaScript, Google Apps Script, Google Sheets</p>
+            <h4>How It Works</h4>
+            <p>Includes a custom menu in Google Sheets (<code>Register Complain → Entry Form</code>) that opens a styled form. Submitted data is processed via Apps Script and stored in the <code>Data_Base</code> sheet. A Master Dashboard sheet visualizes KPIs such as time delays and engineer efficiency scores.</p>
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="https://github.com/Satanand-Ken/GsheetCRM/blob/main/BookingForm.html" target="_blank">BookingForm.html</a></li>
+              <li><a href="https://github.com/Satanand-Ken/GsheetCRM/blob/main/CRM.xlsx" target="_blank">CRM.xlsx</a></li>
+              <li><a href="https://github.com/Satanand-Ken/GsheetCRM/blob/main/Code.gs" target="_blank">Code.gs</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer id="otherlinks">
+    <p>© 2025 Satanand | <a href="#" style="color:#ccc;">Portfolio</a> | <a href="https://github.com/Satanand-Ken" style="color:#ccc;">GitHub</a> | <a href="https://www.linkedin.com/in/satanand-5bb0b1240/" style="color:#ccc;">LinkedIn</a></p>
   </footer>
-
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
